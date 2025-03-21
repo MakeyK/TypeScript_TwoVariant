@@ -64,11 +64,12 @@ export class MessageController {
 
     async create(req: Request, res: Response, next: NextFunction) {
         try {
-            let { sender, recipient, message_send_date, message_get_date, title, text, applications } = req.body;
+            let { message_id, sender, recipient, message_send_date, message_get_date, title, text, applications } = req.body;
             message_get_date = new Date(message_get_date);
             message_send_date = new Date(message_send_date);
+            console.log(req.body)
             const message = await Message.create(
-                { sender, recipient, message_send_date, message_get_date, title, text, applications }
+                { message_id, sender, recipient, message_send_date, message_get_date, title, text, applications }
             );
             res.status(201).json(message);
         } catch (e) {

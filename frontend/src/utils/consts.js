@@ -1,1 +1,5 @@
 export const ADMIN_ROUTE = '/admin'
+export const LOGIN_ROUTE = '/login'
+export const REGISTRATION_ROUTE = '/registration'
+export const MESSAGE_ROUTE = '/message'
+export const DELETEMESSAGE_ROUTE = '/delete'
